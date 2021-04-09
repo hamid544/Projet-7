@@ -1,7 +1,20 @@
 <html>
     <head>
         <script>
-            FUN
+            function calcul() {
+    var a = 0;
+    a = eval(document.getElementById('affichage').value);
+    document.getElementById('affichage').value = a;
+  };
+
+ function ajouter(nombre) {
+  document.getElementById('affichage').value += nombre;
+
+ };
+
+ function del() {
+  document.getElementById('affichage').value = "";
+ }
 
         </script>
         <style>
@@ -9,51 +22,30 @@
                 margin: 0;
                 padding: 0;
             }
-            .button{
-                width: 50;
-                height: 50;
-                font-size: 25;
-                margin: 2;
+            input{
+                width: 80;
+                height: 80;
+                font-size: 30;
+                margin: 9;
             }
-            .textview{
-                width: 217;
-                margin: 5;
-                font-size: 25;
-                padding: 5;
-            }
+            
                
         </style>
     </head>
     <body>
-        <div class="main">
-            <form name="form">
-                <input class="textview">
+        
             </form>
             <table>
-                <tr>
-                    <td><input type="button"value="7"></td>
-                    <td><input type="button"value="8"></td>
-                    <td><input type="button"value="9"></td>
-                    <td><input type="button"value="/"></td>
-                </tr>
-                <tr>
-                    <td><input type="button"value="4"></td>
-                    <td><input type="button"value="5"></td>
-                    <td><input type="button"value="6"></td>
-                    <td><input type="button"value="*"></td>
-                </tr>
-                <tr>
-                    <td><input type="button"value="1"></td>
-                    <td><input type="button"value="2"></td>
-                    <td><input type="button"value="3"></td>
-                    <td><input type="button"value="-"></td>
-                </tr>
-                <tr>
-                    <td><input type="button"value="."></td>
-                    <td><input type="button"value="0"></td>
-                    <td><input type="button"value="+"></td>
-                    <td><input type="button"value="C"></td>
-                </tr>
+              
+                <input type="text" class="form-control" name="result" id="affichage" placeholder="...">
+                <input  type="button"  value="DEL" onclick= "del()" >
+                <input  type="button"  value="1" onclick= "ajouter(1)" >
+                <input  type="button"  value="2" onclick= "ajouter(2)" >
+                <input  type="button"  value="3" onclick= "ajouter(3)" >
+                <input  type="button"  value="4" onclick= "ajouter(4)" >
+                <input  type="button"  value="+" onclick= "ajouter('+')" >
+                <input  type="button"  value="-" onclick= "ajouter('-')" >
+                <input  type="button"  value="=" onclick= "calcul()" >
             </table>
 
         </div>
